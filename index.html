@@ -24,6 +24,7 @@
   
   <script type="text/babel">
     function ColorPicker() {
+      //using useState Hook so it will update the value simulteniously when the user gives an input
       let [color, setColor] = React.useState("#fa9af7")
       let [error, setError] = React.useState("")
 
@@ -35,6 +36,7 @@
 
         setColor(value)
 
+        // using Regex Filter to see if the HEX color code is correct or not
         if (/^#([A-Fa-f0-9]{6})|[A-Fa-f0-9]{3}$/.test(value)){
           setColor(value)
           setError("")
